@@ -37,7 +37,7 @@ public class StartChangeOrder extends BaseService {
     public Response getResponse(
     		@PathParam(MWGApplicationConstants.Requests.Params.Path.mwgStoreID) String mwgStoreID,
     		@PathParam(MWGApplicationConstants.Requests.Params.Path.userID) String userID,
-    		
+    		@PathParam(MWGApplicationConstants.Requests.Params.Path.orderID) String orderID,
     		@HeaderParam(MWGApplicationConstants.Headers.Params.accept) String accept,
     		@HeaderParam(MWGApplicationConstants.Headers.Params.contentType) String contentType,
     		@HeaderParam(MWGApplicationConstants.Headers.Params.auth) String sessionToken    		
@@ -49,6 +49,7 @@ public class StartChangeOrder extends BaseService {
 			// Build the Map of Request Path parameters
 			this.requestParams.put(MWGApplicationConstants.Requests.Params.Path.mwgStoreID, mwgStoreID);
 			this.requestParams.put(MWGApplicationConstants.Requests.Params.Path.userID, userID);
+			this.requestParams.put(MWGApplicationConstants.Requests.Params.Path.orderID, orderID);
 			
             String jsonResponse = this.mwgRequest(BaseService.ReqType.PUT, null, "package com.wakefern.checkout.orders.StartChangeOrderMsg");
             

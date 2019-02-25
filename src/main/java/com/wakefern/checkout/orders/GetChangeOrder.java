@@ -37,7 +37,6 @@ public class GetChangeOrder extends BaseService {
     public Response getResponse(
     		@PathParam(MWGApplicationConstants.Requests.Params.Path.mwgStoreID) String mwgStoreID,
     		@PathParam(MWGApplicationConstants.Requests.Params.Path.userID) String userID,
-    		
     		@HeaderParam(MWGApplicationConstants.Headers.Params.accept) String accept,
     		@HeaderParam(MWGApplicationConstants.Headers.Params.contentType) String contentType,
     		@HeaderParam(MWGApplicationConstants.Headers.Params.auth) String sessionToken    		

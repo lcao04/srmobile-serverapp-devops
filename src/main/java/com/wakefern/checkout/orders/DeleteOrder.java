@@ -36,7 +36,6 @@ public class DeleteOrder extends BaseService {
     public Response getResponse(
     		@PathParam(MWGApplicationConstants.Requests.Params.Path.orderID) String orderID,
     		@PathParam(MWGApplicationConstants.Requests.Params.Path.userID) String userID,
-    		
     		@HeaderParam(MWGApplicationConstants.Headers.Params.accept) String accept,
     		@HeaderParam(MWGApplicationConstants.Headers.Params.contentType) String contentType,
     		@HeaderParam(MWGApplicationConstants.Headers.Params.auth) String sessionToken    		

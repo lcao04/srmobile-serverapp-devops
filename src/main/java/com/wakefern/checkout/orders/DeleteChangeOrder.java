@@ -37,11 +37,9 @@ public class DeleteChangeOrder extends BaseService {
     public Response getResponse(
     		@PathParam(MWGApplicationConstants.Requests.Params.Path.mwgStoreID) String mwgStoreID,
     		@PathParam(MWGApplicationConstants.Requests.Params.Path.userID) String userID,
-    		
     		@HeaderParam(MWGApplicationConstants.Headers.Params.accept) String accept,
     		@HeaderParam(MWGApplicationConstants.Headers.Params.contentType) String contentType,
-    		@HeaderParam(MWGApplicationConstants.Headers.Params.auth) String sessionToken,
-    		String jsonData	
+    		@HeaderParam(MWGApplicationConstants.Headers.Params.auth) String sessionToken
 	) {
         try {		
 			this.requestHeader = new MWGHeader(MWGApplicationConstants.Headers.Checkout.changedOrder, MWGApplicationConstants.Headers.json, sessionToken);
@@ -51,7 +49,7 @@ public class DeleteChangeOrder extends BaseService {
 			this.requestParams.put(MWGApplicationConstants.Requests.Params.Path.mwgStoreID, mwgStoreID);
 			this.requestParams.put(MWGApplicationConstants.Requests.Params.Path.userID, userID);
 			
-            String jsonResponse = this.mwgRequest(BaseService.ReqType.DELETE, jsonData, "package com.wakefern.checkout.orders.DeleteChangeOrder");
+            String jsonResponse = this.mwgRequest(BaseService.ReqType.DELETE, null, "package com.wakefern.checkout.orders.DeleteChangeOrder");
             
 			if(LogUtil.isUserTrackOn) {
 				if ((userID != null) && LogUtil.trackedUserIdsMap.containsKey(userID.trim())) {
