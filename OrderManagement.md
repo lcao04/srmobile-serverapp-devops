@@ -56,6 +56,7 @@ https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/
 
 ## Initiate (PUT) Change Order
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/{storeID}/to/cart
+
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
 | Accept          | application/vnd.mywebgrocer.message+json               |
@@ -67,6 +68,7 @@ https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/
 
 ## Cancel (DELETE) Order
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}
+
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
 | Authorization   | {token}                                                |
