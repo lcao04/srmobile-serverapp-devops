@@ -5,14 +5,23 @@ import com.wakefern.wakefern.WakefernApplicationConstants;
 public class MWGApplicationConstants {
 	private static final String shopRiteProd = "https://mobileapi.shoprite.com/api"; // ShopRite Production
 	private static final String shopRiteProdWeb = "https://api.shoprite.com/api"; // ShopRite Production
-	private static final String shopRiteDev = "https://api.dev.shoprite.com/api"; // ShopRite Development
-	private static final String shopRiteStage = "https://api-sr75stg.staging.shoprite.com/api";//"https://api-sr75stg.staging.shoprite.com/api"; // ShopRite Staging
+	
+	//TODO 
+	//    There is no reliable ShopRiteDev environment from MWG, so we disabled all dev related configurations.
+	//    Note: if chain=ShopRiteStage, it is pointed to the mobile version regardless what "url" is set
+	//    This Java file needs to be re-factored in the future to streamline the process
+	
+	//private static final String shopRiteStageWeb = "https://api-sr75stg.staging.shoprite.com/api";//"https://api-sr75stg.staging.shoprite.com/api"; // ShopRite Staging
+	private static final String shopRiteStage = "https://mobileapi-sr75stg.staging.shoprite.com/api";//"https://api-sr75stg.staging.shoprite.com/api"; // ShopRite Staging
+	
+	//private static final String shopRiteDev = "https://api.dev.shoprite.com/api"; // ShopRite Development
+	
 	private static final String freshGrocerProd = "https://api.thefreshgrocer.com/api"; // FreshGrocer Production
 	private static final String freshGrocerStage = "https://api-fg75stg.staging.thefreshgrocer.com/api"; // FreshGrocer
 																											// Staging
 
 	private static final String freshGrocerStageToken = "62081B21-0885-4544-8849-326195C8F9CD";
-	private static final String shopRiteDevToken = "56BF02A1-074E-4767-9801-73447DC64928";
+	//private static final String shopRiteDevToken = "56BF02A1-074E-4767-9801-73447DC64928";
 	private static final String shopRiteStageToken = "13B4312E-D431-4C53-A16C-5998B2F53482";
 	private static final String shopRiteProdToken = "b5e4d368-d5ee-47ce-9c7d-423de1c879e6";
 
@@ -20,7 +29,7 @@ public class MWGApplicationConstants {
 	private static final String fgProd = "FreshGrocerProd";
 	private static final String srStage = "ShopRiteStage";
 	private static final String srProd = "ShopRiteProd";
-	private static final String srDev = "ShopRiteDev";
+	//private static final String srDev = "ShopRiteDev";
 	
 	//By default, mobile is calling mobileapi.shoprite.com, when value 'web' is specified
 	//	in vcap env var 'url', mobile will call api.shoprite.com
@@ -49,15 +58,19 @@ public class MWGApplicationConstants {
 		case srProd:
 			baseURL = getTargetProdURL();
 			break;
-		case srDev:
-			baseURL = shopRiteDev;
-			break;
+//		case srDev:
+//			baseURL = shopRiteDev;
+//			break;
 
 		default:
 			baseURL = shopRiteProd;
 		}
 
 		return baseURL;
+	}
+	
+	public static String getSRWebURL(){
+		return shopRiteProdWeb;
 	}
 
 	/**
@@ -76,9 +89,9 @@ public class MWGApplicationConstants {
 			appToken = freshGrocerStageToken;
 			break;
 
-		case srDev:
-			appToken = shopRiteDevToken;
-			break;
+//		case srDev:
+//			appToken = shopRiteDevToken;
+//			break;
 		case srStage:
 			appToken = shopRiteStageToken;
 			break;
@@ -127,7 +140,28 @@ public class MWGApplicationConstants {
 		// FreshGrocer Staging : fgStage
 		targetAPI = (targetAPI == null) ? srStage : targetAPI;
 
-		return targetAPI;
+		 return targetAPI;
+	}
+
+	/**
+	 * Retrieve the current brand mode based on the current MWG target API.
+	 *
+	 * @return
+	 */
+	public static String getApplicationMode() {
+		String targetAPI = getTargetAPI();
+		return targetAPI.equals(fgStage) || targetAPI.equals(fgProd)
+			? WakefernApplicationConstants.Chains.FreshGrocer
+			: WakefernApplicationConstants.Chains.ShopRite;
+	}
+	
+	
+	/**
+	 * The generic way to get the system property value
+	 */
+	public static String getSystemProperytyValue(String key) {
+		return  java.lang.System.getenv(key.trim());
+	
 	}
 	
 	/**
@@ -257,6 +291,7 @@ public class MWGApplicationConstants {
 			
 			public static final String deliveryInfoV2 = prefix + "delivery-info-v2+json";
 			public static final String checkoutV2 = prefix + "checkout-v2+json";
+			public static final String checkoutV3 = prefix + "checkout-v3+json";
 			public static final String paymentsV3 = prefix + "payments-v3+json";
 			public static final String checkoutResults = prefix + "checkout-results+json";
 			public static final String addressV2 = prefix + "address-v2+json";
@@ -475,6 +510,11 @@ public class MWGApplicationConstants {
 			public static final String updateRecipe = userRecipes + id;
 		}
 
+		public static class PlasticBagFee {
+			public static final String prefix = "/bagFee";
+			public static final String storeIds = "/storeIds";
+		}
+		
 		public static class Shop {
 			private static final String shop = "/shop";
 			private static final String storeID = "/store" + "/{" + Params.Path.storeID + "}";

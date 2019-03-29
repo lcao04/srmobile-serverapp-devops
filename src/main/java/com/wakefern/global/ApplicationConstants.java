@@ -17,6 +17,7 @@ public final class ApplicationConstants {
         public static final String sort = "&sort=";
         public static final String store = "/store";
         public static final String takeAmp = "&take=";
+        public static final String wakefernApplication = "wakefern application";
     }
 
     public static class Requests {
@@ -26,6 +27,7 @@ public final class ApplicationConstants {
             public static final String contentType  = "Content-Type";
             public static final String contentAccept = "Accept";
             public static final String contentAuthorization = "Authorization";
+            public static final String userAgent = "User-Agent";
         }
 
         public static class Tokens {
@@ -53,14 +55,17 @@ public final class ApplicationConstants {
             public static final String fsn = WakefernApplicationConstants.CouponsV2.PathInfo.fsn;
             public static final String upc = WakefernApplicationConstants.CouponsV2.PathInfo.upc;
             public static final String coupon_id = WakefernApplicationConstants.CouponsV2.PathInfo.coupon_id;
+            public static final String clip_token = WakefernApplicationConstants.CouponsV2.PathInfo.clip_token;
             public static final String CouponIDListByPPC_SEC = WakefernApplicationConstants.CouponsV2.PathInfo.CouponIDListByPPC_SEC;
+            public static final String CouponIDListByPPC_SEC_FG = WakefernApplicationConstants.CouponsV2.PathInfo.CouponIDListByPPC_SEC_FG;
             public static final String AddCouponToPPC_SEC = WakefernApplicationConstants.CouponsV2.PathInfo.AddCouponToPPC_SEC;
+            public static final String AddCouponToPPC_SEC_FG = WakefernApplicationConstants.CouponsV2.PathInfo.AddCouponToPPC_SEC_FG;
             public static final String RemoveCouponFromPPC = WakefernApplicationConstants.CouponsV2.PathInfo.RemoveCouponFromPPC;
+            public static final String RemoveCouponFromPPC_FG = WakefernApplicationConstants.CouponsV2.PathInfo.RemoveCouponFromPPC_FG;
             public static final String GetCouponByUPC = WakefernApplicationConstants.CouponsV2.PathInfo.GetCouponByUPC;
             public static final String GetUPCListByCouponID = WakefernApplicationConstants.CouponsV2.PathInfo.GetUPCListByCouponID;
             public static final String GetHistoryMetadata = WakefernApplicationConstants.CouponsV2.PathInfo.GetHistoryMetadata;
             public static final String GetHistoryCouponByPPC = WakefernApplicationConstants.CouponsV2.PathInfo.GetHistoryCouponByPPC;
-        	
         }
 
         public static class Recommendations {
