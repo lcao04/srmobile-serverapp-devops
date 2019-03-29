@@ -1,12 +1,14 @@
 # Order Management APIs
 
 | Server Type       | Value                         |
+|-------------------|-------------------------------|
 | DEV               | srdepmobileapp                |
 | PROD              | shopritemobileproddep         |
 
 ## GET Orders
 https://{DEV}.mybluemix.net/api/checkout/v7/orders/user/{userID}/store/{storeID}
 | Key             | Value                                                  |
+|-----------------|--------------------------------------------------------|
 | Accept          | application/vnd.mywebgrocer.orders+json                |
 | Authorization   | {token}                                                |
 
@@ -14,6 +16,7 @@ https://{DEV}.mybluemix.net/api/checkout/v7/orders/user/{userID}/store/{storeID}
 ## GET Order Detail
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}
 | Key             | Value                                                  |
+|-----------------|--------------------------------------------------------|
 | Accept          | application/vnd.mywebgrocer.order-detail-v3+json       |
 | Authorization   | {token}                                                |
 
@@ -21,6 +24,7 @@ https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}
 ## GET Change Order
 https://{DEV}.mybluemix.net/api/checkout/v7/user/{userID}/store/{storeID}/changed/order
 | Key             | Value                                                  |
+|-----------------|--------------------------------------------------------|
 | Accept          | application/vnd.mywebgrocer.changed-order+json         |
 | Authorization   | {token}                                                |
 
@@ -28,6 +32,7 @@ https://{DEV}.mybluemix.net/api/checkout/v7/user/{userID}/store/{storeID}/change
 ## DELETE Change Order
 https://{DEV}.mybluemix.net/api/checkout/v7/user/{userID}/store/{storeID}/changed/order
 | Key             | Value                                                  |
+|-----------------|--------------------------------------------------------|
 | Accept          | application/vnd.mywebgrocer.changed-order+json         |
 | Authorization   | {token}                                                |
 
@@ -35,10 +40,12 @@ https://{DEV}.mybluemix.net/api/checkout/v7/user/{userID}/store/{storeID}/change
 ## GET Change Order Message
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/{storeID}/to/cart
 | Key             | Value                                                  |
+|-----------------|--------------------------------------------------------|
 | Accept          | application/vnd.mywebgrocer.message+json               |
 | Authorization   | {token}                                                |
 
 |Sample response                                                                 |
+|--------------------------------------------------------------------------------|
 |[
     {
         "Text": "You currently have items in your cart. Do you wish to add your current cart items to Order 21327172 before proceeding to change the order?",
@@ -50,10 +57,12 @@ https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/
 ## Initiate (PUT) Change Order
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/{storeID}/to/cart
 | Key             | Value                                                  |
+|-----------------|--------------------------------------------------------|
 | Accept          | application/vnd.mywebgrocer.message+json               |
 | Authorization   | {token}                                                |
 
 |Sample response                                                                 |
+|--------------------------------------------------------------------------------|
 |{
     "ChangeOrderId": 21327172,
     "TimeslotId": 0,
@@ -70,4 +79,6 @@ https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/
 
 ## Cancel (DELETE) Order
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}
+| Key             | Value                                                  |
+|-----------------|--------------------------------------------------------|
 | Authorization   | {token}                                                |
