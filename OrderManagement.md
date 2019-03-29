@@ -6,7 +6,9 @@
 | PROD              | shopritemobileproddep         |
 
 ## GET Orders
+```sh
 https://{DEV}.mybluemix.net/api/checkout/v7/orders/user/{userID}/store/{storeID}
+```
 
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
@@ -15,7 +17,9 @@ https://{DEV}.mybluemix.net/api/checkout/v7/orders/user/{userID}/store/{storeID}
 
 
 ## GET Order Detail
+```sh
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}
+```
 
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
@@ -24,7 +28,9 @@ https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}
 
 
 ## GET Change Order
+```sh
 https://{DEV}.mybluemix.net/api/checkout/v7/user/{userID}/store/{storeID}/changed/order
+```
 
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
@@ -33,7 +39,9 @@ https://{DEV}.mybluemix.net/api/checkout/v7/user/{userID}/store/{storeID}/change
 
 
 ## DELETE Change Order
+```sh
 https://{DEV}.mybluemix.net/api/checkout/v7/user/{userID}/store/{storeID}/changed/order
+```
 
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
@@ -42,7 +50,9 @@ https://{DEV}.mybluemix.net/api/checkout/v7/user/{userID}/store/{storeID}/change
 
 
 ## GET Change Order Message
+```sh
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/{storeID}/to/cart
+```
 
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
@@ -55,7 +65,9 @@ https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/
 
 
 ## Initiate (PUT) Change Order
+```sh
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/{storeID}/to/cart
+```
 
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
@@ -67,7 +79,9 @@ https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}/store/
 |{"ChangeOrderId":21327172,"TimeslotId":0,"RemainingTimeSeconds":5397,"Links":[{"Rel":"cart","Placeholders":[],"Queries":null,"Uri":"https://mobileapi.shoprite.com/api/cart/v7/user/cf24c5c5-9e8f-4b22-8c68-d569ab2f5bf1/store/7330772/"}]}|
 
 ## Cancel (DELETE) Order
+```sh
 https://{DEV}.mybluemix.net/api/checkout/v7/order/{orderID}/user/{userID}
+```
 
 | Key             | Value                                                  |
 |-----------------|--------------------------------------------------------|
