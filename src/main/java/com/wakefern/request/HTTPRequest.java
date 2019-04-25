@@ -29,7 +29,7 @@ public class HTTPRequest {
 
 	/**
 	 * Trigger HTTP GET request.
-	 * 
+	 *  
 	 * @param requestURL
 	 * @param requestHeaders
 	 * @param timeOut
@@ -305,7 +305,7 @@ public class HTTPRequest {
 			connection.connect();
 
 			int status = connection.getResponseCode();
-			BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			BufferedReader br = new BufferedReader(new InputStreamReader(status != 401 ? connection.getInputStream() : connection.getErrorStream()));
 			StringBuilder sb = new StringBuilder();
 
 			switch (status) {
