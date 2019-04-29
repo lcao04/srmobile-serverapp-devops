@@ -1,9 +1,5 @@
 # Order Management APIs
 
-| Server Type       | Value                         |
-|-------------------|-------------------------------|
-| DEV               | srdepmobileapp                |
-| PROD              | shopritemobileproddep         |
 
 ## GET Orders
 ```sh
